@@ -88,4 +88,4 @@ async def invite(ctx):
     print("une commande +invite a été excecuté")
     await ctx.send("Pour m'inviter sur un autre serveur, utilisez ce lien:\nhttps://discordapp.com/oauth2/authorize?client_id=705440030209867877&scope=bot&permissions=3492928")
 
-client.run("NzA1NDQwMDMwMjA5ODY3ODc3.XqruSw.T9dvo8zLYfQu6oFE2J153B-OshE")
+client.run("")

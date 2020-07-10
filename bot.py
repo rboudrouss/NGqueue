@@ -10,7 +10,7 @@ emojis = {"blue":":blue_circle:","orange":":orange_circle:",
         "black":":black_circle:","cyan":":large_blue_diamond:",
         "lime":":green_circle:","coral":":red_circle:"}
 
-def li():
+def vote():
     def emoji(a):
         global emojis
         try:
@@ -52,12 +52,13 @@ async def on_ready():
 @client.command()
 async def queue(ctx, *args: to_lower):
     args = " ".join(args)
+    print("Une commande +queue {} a été excécuté !".format(args))
     if args in serveurs:
-        rep = li()
+        rep = vote()
         nbr = serveurs.index(args)
         await ctx.send(rep[nbr])
     elif args == "all":
-        rep = li()
+        rep = vote()
         await ctx.send("\n".join(rep))
     elif args == "pink":
         await ctx.send("Je sais pas TwT")
@@ -69,6 +70,7 @@ async def queue(ctx, *args: to_lower):
 @client.command()
 async def test(ctx, *args: to_lower):
     args = " ".join(args)
+    print("Une commande +test {} a été excécuté !".format(args))
     if not args:
         await ctx.send("pas d'arguments")
     else:
@@ -77,11 +79,13 @@ async def test(ctx, *args: to_lower):
 
 @client.command()
 async def stop(ctx):
+    print("une commande +stop a été excécuté")
     await ctx.send("arrêt du bot en cour...")
     exit()
 
 @client.command()
 async def invite(ctx):
+    print("une commande +invite a été excecuté")
     await ctx.send("Pour m'inviter sur un autre serveur, utilisez ce lien:\nhttps://discordapp.com/oauth2/authorize?client_id=705440030209867877&scope=bot&permissions=3492928")
 
 client.run("NzA1NDQwMDMwMjA5ODY3ODc3.XqruSw.T9dvo8zLYfQu6oFE2J153B-OshE")
